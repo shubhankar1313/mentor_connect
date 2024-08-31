@@ -1,85 +1,13 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (index >= slides.length) currentSlide = 0;
+    if (index < 0) currentSlide = slides.length - 1;
+    slides.forEach(slide => slide.style.transform = `translateX(-${currentSlide * 100}%)`);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.intro {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f1f1f1;
-}
-
-.reviews {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    position: relative;
-}
-
-.slider {
-    display: flex;
-    overflow-x: hidden;
-}
-
-.slide {
-    min-width: 100%;
-    transition: 0.5s ease-in-out;
-}
-
-.slide p {
-    font-size: 18px;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.slide span {
-    display: block;
-    text-align: right;
-    font-weight: bold;
-}
-
-.search-mentors {
-    background-color: #f1f1f1;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.search-mentors input {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 16px;
-}
+setInterval(() => {
+    currentSlide++;
+    showSlide(currentSlide);
+}, 3000);
