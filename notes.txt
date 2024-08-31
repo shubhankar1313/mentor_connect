@@ -1,34 +1,145 @@
-async function fetchMentors() {
-    try {
-        const response = await fetch('/get-mentors?keywords=IT');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-        const mentors = await response.json();
-        console.log('Fetched mentors:', mentors); // Add this line
+        header {
+            background-color: #0e141b;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #007BFF; /* Accent color */
+        }
+        .site-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .mentee-info {
+            display: flex;
+            align-items: center;
+        }
+        .mentee-info img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .mentee-info span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+        }
+        .mentor-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .mentor-card:hover {
+            transform: scale(1.02);
+        }
+        .mentor-card img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .mentor-card .mentor-info {
+            flex-grow: 1;
+        }
+        .mentor-card .mentor-info h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .mentor-card .mentor-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .mentor-card .mentor-info p span {
+            font-weight: bold;
+        }
+        .mentor-card .mentor-info .mentor-bio {
+            font-size: 16px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-name">Mentee Dashboard</div>
+        <div class="mentee-info">
+            <img src="mentee-profile.jpg" alt="Mentee Profile">
+            <span>Welcome, Mentee!</span>
+        </div>
+    </header>
+    <main>
+        <h2 class="section-title">Your Recommended Mentors:</h2>
+        <div id="mentor-list"></div>
+    </main>
+    
+    <script>
+        async function fetchMentors() {
+            try {
+                const response = await fetch('/get-mentors?keywords=IT');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const mentors = await response.json();
+                console.log('Fetched mentors:', mentors);
 
-        const mentorList = document.getElementById('mentor-list');
-        mentorList.innerHTML = ''; // Clear any previous content
+                const mentorList = document.getElementById('mentor-list');
+                mentorList.innerHTML = '';
 
-        mentors.forEach(mentor => {
-            const mentorCard = document.createElement('div');
-            mentorCard.className = 'mentor-card';
+                mentors.forEach(mentor => {
+                    const mentorCard = document.createElement('div');
+                    mentorCard.className = 'mentor-card';
 
-            const mentorInfo = `
-                <div class="mentor-info">
-                    <h3>${mentor[0]} ${mentor[1]}</h3>
-                    <p>Unit: ${mentor[2]}</p>
-                    <p>Designation: ${mentor[3]}</p>
-                    <p>Past Experience: ${mentor[4]}</p>
-                </div>
-            `;
+                    const mentorInfo = `
+                        <div class="mentor-info">
+                            <img src="default-mentor.jpg" alt="Mentor Profile">
+                            <div>
+                                <h3>${mentor[0]} ${mentor[1]}</h3>
+                                <p><span>Unit:</span> ${mentor[2]}</p>
+                                <p><span>Designation:</span> ${mentor[3]}</p>
+                                <p><span>Past Experience:</span> ${mentor[4]}</p>
+                            </div>
+                        </div>
+                    `;
 
-            mentorCard.innerHTML = mentorInfo;
-            mentorList.appendChild(mentorCard);
-        });
-    } catch (error) {
-        console.error('Error fetching mentors:', error);
-    }
-}
+                    mentorCard.innerHTML = mentorInfo;
+                    mentorList.appendChild(mentorCard);
+                });
+            } catch (error) {
+                console.error('Error fetching mentors:', error);
+            }
+        }
 
-fetchMentors();
+        fetchMentors();
+    </script>
+</body>
+</html>
