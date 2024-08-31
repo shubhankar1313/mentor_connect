@@ -1,21 +1,34 @@
-app.get('/get-mentors', (req, res) => {
-    const keywords = req.query.keywords || 'IT';
-    const pythonProcess = spawn('python3', [path.join(__dirname, 'scripts', 'Recommendation.py'), keywords]);
-
-    let dataToSend = '';
-
-    pythonProcess.stdout.on('data', (data) => {
-        dataToSend += data.toString();
-    });
-
-    pythonProcess.on('close', (code) => {
-        console.log('Python script output:', dataToSend); // Add this line
-        try {
-            const mentorData = JSON.parse(dataToSend);
-            res.json(mentorData);
-        } catch (error) {
-            console.error('Error parsing JSON:', error);
-            res.status(500).send('Error processing data');
+async function fetchMentors() {
+    try {
+        const response = await fetch('/get-mentors?keywords=IT');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    });
-});
+        const mentors = await response.json();
+        console.log('Fetched mentors:', mentors); // Add this line
+
+        const mentorList = document.getElementById('mentor-list');
+        mentorList.innerHTML = ''; // Clear any previous content
+
+        mentors.forEach(mentor => {
+            const mentorCard = document.createElement('div');
+            mentorCard.className = 'mentor-card';
+
+            const mentorInfo = `
+                <div class="mentor-info">
+                    <h3>${mentor[0]} ${mentor[1]}</h3>
+                    <p>Unit: ${mentor[2]}</p>
+                    <p>Designation: ${mentor[3]}</p>
+                    <p>Past Experience: ${mentor[4]}</p>
+                </div>
+            `;
+
+            mentorCard.innerHTML = mentorInfo;
+            mentorList.appendChild(mentorCard);
+        });
+    } catch (error) {
+        console.error('Error fetching mentors:', error);
+    }
+}
+
+fetchMentors();
