@@ -1,84 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentee Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: #0e141b;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .site-name {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .mentee-info {
-            display: flex;
-            align-items: center;
-        }
-        .mentee-info img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .mentee-info span {
-            font-size: 18px;
-        }
-        main {
-            padding: 20px;
-        }
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .mentor-card {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+app.get('/get-mentors', (req, res) => {
+    const keywords = req.query.keywords || 'IT';
+    const pythonProcess = spawn('python3', [path.join(__dirname, 'scripts', 'Recommendation.py'), keywords]);
 
+    let dataToSend = '';
+
+    pythonProcess.stdout.on('data', (data) => {
+        dataToSend += data.toString();
+    });
+
+    pythonProcess.on('close', (code) => {
+        console.log('Python script output:', dataToSend); // Add this line
+        try {
+            const mentorData = JSON.parse(dataToSend);
+            res.json(mentorData);
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            res.status(500).send('Error processing data');
         }
-        .mentor-card img {
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            margin-right: 15px;
-        }
-        .mentor-card .mentor-info {
-            flex-grow: 1;
-        }
-        .mentor-card .mentor-info h3 {
-            margin: 0;
-            font-size: 20px;
-            color: #333;
-        }
-        .mentor-card .mentor-info p {
-            margin: 5px 0 0;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-<h2>Your mentor is:</h2>
-<p>your answer</p>
-        </div>
-    </main>
-</body>
-</html>
+    });
+});
