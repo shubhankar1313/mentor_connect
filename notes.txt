@@ -12,121 +12,76 @@
             margin: 0;
             padding: 0;
         }
-        .header {
-            padding: 20px;
-            text-align: center;
-            background-color: #FDF6E4;
-        }
-        .header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .header p {
-            font-size: 18px;
-            margin: 5px 0 0;
-        }
-
-        /* Container Section */
-        .container-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .container {
-            width: 30%;
-            margin: 10px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            text-align: center;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .container img {
-            width: 100%;
-            height: auto;
-        }
-        .container p {
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* Features Section */
-        .features {
-            background-color: #FDF6E4;
+        
+        /* Expert Section */
+        .experts {
             padding: 40px;
+            background-color: #fff;
             text-align: center;
         }
-        .features h2 {
+        .experts h2 {
             font-size: 36px;
             margin-bottom: 20px;
         }
-        .features p {
+        .expert-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 22%;
+            background-color: #FDF6E4;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .card h3 {
             font-size: 20px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 10px;
         }
-        .features ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-        .features ul li {
+        .stars {
+            color: #f1c40f;
             font-size: 18px;
-            padding: 10px 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>SAARTHI</h1>
-        <p>Be a CREATOR | UPCOMING EVENTS | FIND EXPERTS</p>
-    </div>
+    <!-- Previous sections go here... -->
 
-    <!-- Container Section -->
-    <div class="container-section">
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Tech & Innovation">
-            <p>Tech & Innovation</p>
+    <!-- Experts Section -->
+    <div class="experts">
+        <h2>Our Top Experts</h2>
+        <div class="expert-cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 1">
+                <h3>Expert Name 1</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 2">
+                <h3>Expert Name 2</h3>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 3">
+                <h3>Expert Name 3</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 4">
+                <h3>Expert Name 4</h3>
+                <div class="stars">★★★★☆</div>
+            </div>
         </div>
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Research">
-            <p>Research</p>
-        </div>
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Career Goals">
-            <p>Career Goals</p>
-        </div>
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Entrepreneurship">
-            <p>Entrepreneurship</p>
-        </div>
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Study Abroad">
-            <p>Study Abroad</p>
-        </div>
-        <div class="container">
-            <img src="https://via.placeholder.com/300x200" alt="Competitive Exams">
-            <p>Competitive Exams</p>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="features">
-        <h2>About SAARTHI</h2>
-        <p>
-            SAARTHI is a mentor connect platform powered by Machine Learning (ML). 
-            We help you connect with the best mentors who can guide you on your journey towards success. 
-            Our platform offers a range of features designed to match you with the ideal mentor.
-        </p>
-        <ul>
-            <li>Our advanced engine suggests the best mentor based on your preferences and goals.</li>
-            <li>Get 1:1 mentorship from industry experts and experienced professionals.</li>
-            <li>Personalized guidance and support tailored to your unique needs.</li>
-        </ul>
     </div>
 </body>
 </html>
-
