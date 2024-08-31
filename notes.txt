@@ -13,78 +13,85 @@
             padding: 0;
         }
 
-        /* FAQ Section */
-        .faq-section {
+        /* Footer Section */
+        .footer {
             display: flex;
-            padding: 50px;
-            background-color: #FDF6E4;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .faq-box {
-            flex: 1;
-            padding: 40px;
-            background-color: #FF6F61; /* Color-coded FAQ box */
+            padding: 40px 50px;
+            background-color: #333;
             color: #fff;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-right: 30px;
         }
 
-        .faq-box h2 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .qna {
-            flex: 2;
-        }
-
-        .question {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .question h3 {
-            font-size: 22px;
+        .footer-left {
+            font-size: 36px;
             font-weight: bold;
-            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .question p {
-            font-size: 18px;
-            margin: 0;
-            line-height: 1.5;
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .footer-right a {
+            color: #FF6F61;
+            text-decoration: none;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-right a:hover {
+            color: #FFD700;
+        }
+
+        .footer-socials {
+            margin-top: 20px;
+        }
+
+        .footer-socials a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #FF6F61;
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: #FFD700;
+        }
+
+        .footer-right p {
+            margin: 10px 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <!-- Previous sections go here... -->
 
-    <!-- FAQ Section -->
-    <div class="faq-section">
-        <div class="faq-box">
-            <h2>FAQ</h2>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-left">
+            SAARTHI
         </div>
-        <div class="qna">
-            <div class="question">
-                <h3>How does Saarthi connect me with mentors?</h3>
-                <p>Our platform uses machine learning algorithms to analyze your profile and preferences, matching you with the best possible mentors.</p>
+        <div class="footer-right">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="question">
-                <h3>Is the mentorship 1:1?</h3>
-                <p>Yes, Saarthi offers personalized 1:1 mentorship sessions tailored to your specific needs and goals.</p>
-            </div>
-            <div class="question">
-                <h3>How can I trust the quality of mentors?</h3>
-                <p>All our mentors are thoroughly vetted and rated by previous mentees, ensuring you receive guidance from experienced and trustworthy professionals.</p>
-            </div>
+            <p>&copy; 2024 Saarthi. All rights reserved.</p>
+            <p>123 Mentor Avenue, Tech City, Innovation State, 56789</p>
+            <p>Email: support@saarthi.com | Phone: +1 234 567 890</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
