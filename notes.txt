@@ -1,12 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAARTHI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SAARTHI</div>
+        <nav>
+            <ul>
+                <li><a href="#">Be a CREATOR</a></li>
+                <li><a href="#">UPCOMING EVENTS</a></li>
+                <li><a href="#">FIND EXPERTS <span>👀</span></a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <section class="main-content">
+        <div class="text-content">
+            <h1>Start your <br><span class="highlight">side hustle</span> today</h1>
+            <p>Turn your passion and knowledge into a thriving business. Help your audience get ahead in life.</p>
+            <div class="buttons">
+                <button class="primary-btn">Start My Page</button>
+                <button class="secondary-btn">Watch The Film</button>
+            </div>
+            <div class="review-section">
+                <img src="reviewer1.png" alt="Reviewer 1">
+                <img src="reviewer2.png" alt="Reviewer 2">
+                <img src="reviewer3.png" alt="Reviewer 3">
+                <img src="reviewer4.png" alt="Reviewer 4">
+                <span>5/5 by 1000+ creators</span>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="your-image.png" alt="Expert Image" class="expert-image">
+            <div class="expert-info">
+                <p><strong>Danny</strong> helps people get a job in tech</p>
+                <span class="followers">300k+</span>
+            </div>
+        </div>
+    </section>
 
-    <title>Hello, world!</title>
-  </head>
+    <script src="scripts.js"></script>
+</body>
+</html>
