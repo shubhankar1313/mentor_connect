@@ -3,95 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAARTHI - Mentor Connect Platform</title>
+    <title>Mentee Dashboard</title>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FAF9F6;
-            color: #333;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
         }
-
-        /* Footer Section */
-        .footer {
+        header {
+            background-color: #0e141b;
+            color: white;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 50px;
-            background-color: #333;
-            color: #fff;
         }
-
-        .footer-left {
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-right {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-        }
-
-        .footer-right a {
-            color: #FF6F61;
-            text-decoration: none;
-            margin: 5px 0;
-            transition: color 0.3s ease;
-        }
-
-        .footer-right a:hover {
-            color: #FFD700;
-        }
-
-        .footer-socials {
-            margin-top: 20px;
-        }
-
-        .footer-socials a {
-            margin: 0 10px;
+        .site-name {
             font-size: 24px;
-            color: #FF6F61;
-            transition: color 0.3s ease;
+            font-weight: bold;
         }
-
-        .footer-socials a:hover {
-            color: #FFD700;
+        .mentee-info {
+            display: flex;
+            align-items: center;
         }
+        .mentee-info img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .mentee-info span {
+            font-size: 18px;
+        }
+        main {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .mentor-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
 
-        .footer-right p {
-            margin: 10px 0;
-            font-size: 14px;
+        }
+        .mentor-card img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        .mentor-card .mentor-info {
+            flex-grow: 1;
+        }
+        .mentor-card .mentor-info h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+        .mentor-card .mentor-info p {
+            margin: 5px 0 0;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <!-- Previous sections go here... -->
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-left">
-            SAARTHI
+<h2>Your mentor is:</h2>
+<p>your answer</p>
         </div>
-        <div class="footer-right">
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <div class="footer-socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2024 Saarthi. All rights reserved.</p>
-            <p>123 Mentor Avenue, Tech City, Innovation State, 56789</p>
-            <p>Email: support@saarthi.com | Phone: +1 234 567 890</p>
-        </div>
-    </footer>
+    </main>
 </body>
 </html>
