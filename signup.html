@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - MentorConnect</title>
+    <link rel="stylesheet" href="styles_signup.css">
+</head>
+<body>
+    <header>
+        <h1>MentorConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Find a Mentor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="signup">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="role">I want to sign up as a:</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select...</option>
+                        <option value="mentee">Mentee</option>
+                        <option value="mentor">Mentor</option>
+                    </select>
+                </div>
+                
+                <!-- Mentee fields -->
+                <div id="mentee-fields" class="conditional-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="mentee-name">Name:</label>
+                        <input type="text" id="mentee-name" name="mentee-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-email">Email:</label>
+                        <input type="email" id="mentee-email" name="mentee-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-dob">Date of Birth:</label>
+                        <input type="date" id="mentee-dob" name="mentee-dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-phone">Phone Number:</label>
+                        <input type="tel" id="mentee-phone" name="mentee-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-college">College Name:</label>
+                        <input type="text" id="mentee-college" name="mentee-college" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-gender">Gender:</label>
+                        <select id="mentee-gender" name="mentee-gender" required>
+                            <option value="">Select...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-source">Where did you hear about us?</label>
+                        <input type="text" id="mentee-source" name="mentee-source">
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-address">Current Address:</label>
+                        <textarea id="mentee-address" name="mentee-address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-goals">Learning Goals:</label>
+                        <textarea id="mentee-goals" name="mentee-goals" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-preferences">Preferred Learning Areas:</label>
+                        <input type="text" id="mentee-preferences" name="mentee-preferences">
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-password">Set Password:</label>
+                        <input type="password" id="mentee-password" name="mentee-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentee-confirm-password">Confirm Password:</label>
+                        <input type="password" id="mentee-confirm-password" name="mentee-confirm-password" required>
+                    </div>
+                </div>
+                
+                <!-- Mentor fields -->
+                <div id="mentor-fields" class="conditional-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="mentor-name">Name:</label>
+                        <input type="text" id="mentor-name" name="mentor-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-email">Email:</label>
+                        <input type="email" id="mentor-email" name="mentor-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-dob">Date of Birth:</label>
+                        <input type="date" id="mentor-dob" name="mentor-dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-phone">Phone Number:</label>
+                        <input type="tel" id="mentor-phone" name="mentor-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-gender">Gender:</label>
+                        <select id="mentor-gender" name="mentor-gender" required>
+                            <option value="">Select...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-resume">Upload Resume:</label>
+                        <input type="file" id="mentor-resume" name="mentor-resume" accept=".pdf, .doc, .docx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-id">Upload a Form of Identification:</label>
+                        <input type="file" id="mentor-id" name="mentor-id" accept=".jpg, .jpeg, .png" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-expectations">What are your expectations with this role?</label>
+                        <textarea id="mentor-expectations" name="mentor-expectations" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-company">Current Company:</label>
+                        <input type="text" id="mentor-company" name="mentor-company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-designation">Designation/Unit:</label>
+                        <input type="text" id="mentor-designation" name="mentor-designation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-address">Current Address:</label>
+                        <textarea id="mentor-address" name="mentor-address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-source">Where did you hear about us?</label>
+                        <input type="text" id="mentor-source" name="mentor-source">
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-password">Set Password:</label>
+                        <input type="password" id="mentor-password" name="mentor-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor-confirm-password">Confirm Password:</label>
+                        <input type="password" id="mentor-confirm-password" name="mentor-confirm-password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button">Sign Up</button>
+            </form>
+            <!-- Added link to the login page -->
+            <p class="login-link">Already have an account? <a href="login.html">Login here</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 MentorConnect. All rights reserved.</p>
+    </footer>
+    <script src="app_signup.js"></script>
+</body>
+</html>
