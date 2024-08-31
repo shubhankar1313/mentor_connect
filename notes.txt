@@ -3,182 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAARTHI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>SAARTHI - Mentor Connect Platform</title>
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #FAF9F6;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #333;
+        }
+        .header {
+            padding: 20px;
+            text-align: center;
+            background-color: #FDF6E4;
+        }
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 5px 0 0;
         }
 
-        .navbar {
+        /* Container Section */
+        .container-section {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
             padding: 20px;
         }
-
-        .navbar .logo {
-            font-size: 30px;
-            font-weight: 700;
-            color: #e75b27;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar ul li {
-            margin-right: 20px;
-        }
-
-        .navbar ul li a {
-            text-decoration: none;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .navbar ul li a .emoji {
-            font-size: 20px;
-        }
-
-        .header-content {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .header-content h1 {
-            font-size: 50px;
-            margin: 0;
-        }
-
-        .header-content p {
-            font-size: 20px;
-            color: #555;
-        }
-
-        .header-buttons {
-            margin-top: 30px;
-        }
-
-        .header-buttons button {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .header-buttons button.secondary {
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #333;
-        }
-
-        .student-review {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .student-review img {
-            width: 300px;
-            border-radius: 10px;
-            margin: 0 10px;
-        }
-
-        .student-review p {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .student-review p span {
-            font-weight: 700;
-        }
-
-        .options-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 50px;
-        }
-
-        .option-container {
+        .container {
             width: 30%;
-            margin-bottom: 30px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+        .container p {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #FDF6E4;
+            padding: 40px;
             text-align: center;
         }
-
-        .option-container img {
-            width: 100%;
-            border-radius: 10px;
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
-
-        .option-container p {
-            margin-top: 10px;
-            font-weight: 700;
+        .features p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .features ul li {
             font-size: 18px;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">SAARTHI</div>
-        <ul>
-            <li><a href="#">Be a CREATOR</a></li>
-            <li><a href="#">UPCOMING EVENTS</a></li>
-            <li><a href="#">FIND EXPERTS <span class="emoji">👀</span></a></li>
-        </ul>
+    <div class="header">
+        <h1>SAARTHI</h1>
+        <p>Be a CREATOR | UPCOMING EVENTS | FIND EXPERTS</p>
     </div>
 
-    <div class="header-content">
-        <h1>Start your side hustle today</h1>
-        <p>Turn your passion and knowledge into a thriving business. Help your audience get ahead in life.</p>
-        <div class="header-buttons">
-            <button>Start My Page</button>
-            <button class="secondary">Watch The Film</button>
-        </div>
-    </div>
-
-    <div class="student-review">
-        <img src="https://via.placeholder.com/300x300" alt="Student">
-        <p><span>Danny</span> helps people get a job in tech</p>
-    </div>
-
-    <div class="options-section">
-        <div class="option-container">
+    <!-- Container Section -->
+    <div class="container-section">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Tech & Innovation">
             <p>Tech & Innovation</p>
         </div>
-        <div class="option-container">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Research">
             <p>Research</p>
         </div>
-        <div class="option-container">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Career Goals">
             <p>Career Goals</p>
         </div>
-        <div class="option-container">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Entrepreneurship">
             <p>Entrepreneurship</p>
         </div>
-        <div class="option-container">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Study Abroad">
             <p>Study Abroad</p>
         </div>
-        <div class="option-container">
+        <div class="container">
             <img src="https://via.placeholder.com/300x200" alt="Competitive Exams">
             <p>Competitive Exams</p>
         </div>
     </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <h2>About SAARTHI</h2>
+        <p>
+            SAARTHI is a mentor connect platform powered by Machine Learning (ML). 
+            We help you connect with the best mentors who can guide you on your journey towards success. 
+            Our platform offers a range of features designed to match you with the ideal mentor.
+        </p>
+        <ul>
+            <li>Our advanced engine suggests the best mentor based on your preferences and goals.</li>
+            <li>Get 1:1 mentorship from industry experts and experienced professionals.</li>
+            <li>Personalized guidance and support tailored to your unique needs.</li>
+        </ul>
+    </div>
 </body>
 </html>
+
