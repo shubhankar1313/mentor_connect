@@ -1,49 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAARTHI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">SAARTHI</div>
-        <nav>
-            <ul>
-                <li><a href="#">Be a CREATOR</a></li>
-                <li><a href="#">UPCOMING EVENTS</a></li>
-                <li><a href="#">FIND EXPERTS <span>👀</span></a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
 
-    <section class="intro">
-        <h1>Begin your journey like them:</h1>
-    </section>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    <section class="reviews">
-        <div class="slider">
-            <div class="slide">
-                <p>"SAARTHI helped me kickstart my tech career!"</p>
-                <span>- Student A</span>
-            </div>
-            <div class="slide">
-                <p>"The mentors at SAARTHI are top-notch!"</p>
-                <span>- Student B</span>
-            </div>
-            <div class="slide">
-                <p>"I found the perfect guide for my startup journey."</p>
-                <span>- Student C</span>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
 
-    <section class="search-mentors">
-        <h2>Search for Mentors</h2>
-        <input type="text" placeholder="Search for mentors...">
-    </section>
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-    <script src="scripts.js"></script>
-</body>
-</html>
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f1f1f1;
+}
+
+.reviews {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.slide p {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.slide span {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}
+
+.search-mentors {
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.search-mentors input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+}
