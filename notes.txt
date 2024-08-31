@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAARTHI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SAARTHI</div>
+        <nav>
+            <ul>
+                <li><a href="#">Be a CREATOR</a></li>
+                <li><a href="#">UPCOMING EVENTS</a></li>
+                <li><a href="#">FIND EXPERTS <span>👀</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Begin your journey like them:</h1>
+    </section>
+
+    <section class="reviews">
+        <div class="slider">
+            <div class="slide">
+                <p>"SAARTHI helped me kickstart my tech career!"</p>
+                <span>- Student A</span>
+            </div>
+            <div class="slide">
+                <p>"The mentors at SAARTHI are top-notch!"</p>
+                <span>- Student B</span>
+            </div>
+            <div class="slide">
+                <p>"I found the perfect guide for my startup journey."</p>
+                <span>- Student C</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-mentors">
+        <h2>Search for Mentors</h2>
+        <input type="text" placeholder="Search for mentors...">
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
