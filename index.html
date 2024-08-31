@@ -2,74 +2,470 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MentorConnect</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SAARTHI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .navbar .logo {
+            font-size: 30px;
+            font-weight: 700;
+            color: #e75b27;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .navbar ul li a .emoji {
+            font-size: 20px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .header-content h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .header-content p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .header-buttons {
+            margin-top: 30px;
+        }
+
+        .header-buttons button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .header-buttons button.secondary {
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .student-review {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .student-review img {
+            width: 300px;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .student-review p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .student-review p span {
+            font-weight: 700;
+        }
+
+        .options-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .option-container {
+            width: 30%;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .option-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .option-container p {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        
+        /* Features Section */
+        .features {
+            background-color: #FDF6E4;
+            padding: 40px;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .features p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .features ul li {
+            font-size: 18px;
+            padding: 10px 0;
+        }
+
+        
+        /* Expert Section */
+        .experts {
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .experts h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .expert-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 22%;
+            background-color: #FDF6E4;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .stars {
+            color: #f1c40f;
+            font-size: 18px;
+        }
+
+        
+        /* FAQ Section */
+        .faq-section {
+            display: flex;
+            padding: 50px;
+            background-color: #FDF6E4;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-box {
+            flex: 1;
+            padding: 40px;
+            background-color: #FF6F61; /* Color-coded FAQ box */
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-right: 30px;
+        }
+
+        .about{
+            flex: 1;
+            
+            padding: 20px;
+            background-color: #b84237; /* Color-coded FAQ box */
+            color: #fff;
+            text-align: left;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .faq-box h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .qna {
+            flex: 2;
+        }
+
+        .question {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .ab {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .question p {
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        
+        /* Footer Section */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 50px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .footer-left {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .footer-right a {
+            color: #FF6F61;
+            text-decoration: none;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-right a:hover {
+            color: #FFD700;
+        }
+
+        .footer-socials {
+            margin-top: 20px;
+        }
+
+        .footer-socials a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #FF6F61;
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: #FFD700;
+        }
+
+        .footer-right p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to MentorConnect</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="#">Find a Mentor</a></li>
-                <li><a href="contact.html">Contact Us</a></li> <!-- Updated link -->
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <img src="images/ment.jpg" alt="Mentor and Mentee" class="hero-image">
-            <div class="hero-text">
-                <h2>Connecting Passionate Learners with Experienced Mentors</h2>
-                <p>At MentorConnect, we believe in the power of mentorship to inspire, guide, and empower. Whether you're looking to share your knowledge or seek guidance, you're at the right place.</p>
-                <a href="signup.html" class="cta-button">Get Started Today</a>
-            </div>
-        </section>
+    <div class="navbar">
+        <div class="logo">SAARTHI</div>
+        <ul>
+            <li><a href="#">Be a CREATOR</a></li>
+            <li><a href="#">UPCOMING EVENTS</a></li>
+            <li><a href="mentee_dashboard.html">FIND EXPERTS <span class="emoji">👀</span></a></li>
+        </ul>
+    </div>
 
-        <section class="features">
-            <h2>Why Choose MentorConnect?</h2>
-            <div class="feature-item">
-                <h3>Expert Mentors</h3>
-                <p>Our mentors are industry experts with a wealth of knowledge and experience ready to help you succeed.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Personalized Matching</h3>
-                <p>We use advanced algorithms to match mentors and mentees based on interests, skills, and goals.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Flexible Scheduling</h3>
-                <p>Connect with your mentor at your convenience with our flexible scheduling options.</p>
-            </div>
-        </section>
+    <div class="header-content">
+        <h1>Start your side hustle today</h1>
+        <p>Turn your passion and knowledge into a thriving business. Help your audience get ahead in life.</p>
+        <div class="header-buttons">
+            <button>Start My Page</button>
+            <button class="secondary">Watch The Film</button>
+        </div>
+    </div>
 
-        <section class="testimonials">
-            <h2>What Our Users Say</h2>
-            <div class="testimonial">
-                <p>"MentorConnect helped me find the perfect mentor who guided me through my career change. Highly recommend!"</p>
-                <cite>- Sarah, Mentee</cite>
-            </div>
-            <div class="testimonial">
-                <p>"Being a mentor on MentorConnect has been a rewarding experience. I love sharing my knowledge and helping others grow."</p>
-                <cite>- James, Mentor</cite>
-            </div>
-        </section>
+    <div class="student-review">
+        <img src="https://via.placeholder.com/300x300" alt="Student">
+        <p><span>Danny</span> helps people get a job in tech</p>
+    </div>
 
-        <section class="call-to-action">
-            <h2>Join Our Community</h2>
-            <p>Ready to start your mentoring journey? Sign up today and make a difference!</p>
-            <a href="signup.html" class="cta-button">Sign Up Now</a>
-            <br>
-            <br>
-            <br>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 MentorConnect. All rights reserved.</p>
-    </footer>
-    <script src="app.js"></script>
+    <div class="options-section">
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Tech & Innovation">
+            <p>Tech & Innovation</p>
+        </div>
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Research">
+            <p>Research</p>
+        </div>
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Career Goals">
+            <p>Career Goals</p>
+        </div>
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Entrepreneurship">
+            <p>Entrepreneurship</p>
+        </div>
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Study Abroad">
+            <p>Study Abroad</p>
+        </div>
+        <div class="option-container">
+            <img src="https://via.placeholder.com/300x200" alt="Competitive Exams">
+            <p>Competitive Exams</p>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="features">
+        <div class = "about">
+        <h2 class = "h2">About SAARTHI</h2>
+        </div>
+        <div class = "ab">
+        <p>
+            SAARTHI is a mentor connect platform powered by Machine Learning (ML). 
+            We help you connect with the best mentors who can guide you on your journey towards success. 
+            Our platform offers a range of features designed to match you with the ideal mentor.
+        </p>
+        <ul>
+            <li>Our advanced engine suggests the best mentor based on your preferences and goals.</li>
+            <li>Get 1:1 mentorship from industry experts and experienced professionals.</li>
+            <li>Personalized guidance and support tailored to your unique needs.</li>
+        </ul>
+    </div>
+    </div>
+
+    
+    <!-- Experts Section -->
+    <div class="experts">
+        <h2>Our Top Experts</h2>
+        <div class="expert-cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 1">
+                <h3>Expert Name 1</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 2">
+                <h3>Expert Name 2</h3>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 3">
+                <h3>Expert Name 3</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Expert 4">
+                <h3>Expert Name 4</h3>
+                <div class="stars">★★★★☆</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <div class="faq-box">
+            <h2>FAQ</h2>
+        </div>
+        <div class="qna">
+            <div class="question">
+                <h3>How does Saarthi connect me with mentors?</h3>
+                <p>Our platform uses machine learning algorithms to analyze your profile and preferences, matching you with the best possible mentors.</p>
+            </div>
+            <div class="question">
+                <h3>Is the mentorship 1:1?</h3>
+                <p>Yes, Saarthi offers personalized 1:1 mentorship sessions tailored to your specific needs and goals.</p>
+            </div>
+            <div class="question">
+                <h3>How can I trust the quality of mentors?</h3>
+                <p>All our mentors are thoroughly vetted and rated by previous mentees, ensuring you receive guidance from experienced and trustworthy professionals.</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-left">
+                SAARTHI
+            </div>
+            <div class="footer-right">
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2024 Saarthi. All rights reserved.</p>
+                <p>123 Mentor Avenue, Tech City, Innovation State, 56789</p>
+                <p>Email: support@saarthi.com | Phone: +1 234 567 890</p>
+            </div>
+        </footer>
+    
 </body>
 </html>

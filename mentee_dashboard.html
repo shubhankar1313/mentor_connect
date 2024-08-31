@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Dashboard</title>
+    <style>
+        /* ... Your existing styles ... */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-name">Mentee Dashboard</div>
+        <div class="mentee-info">
+            <img src="mentee-profile.jpg" alt="Mentee Profile">
+            <span>Welcome, Mentee!</span>
+        </div>
+    </header>
+    <main>
+        <h2>Your mentor is:</h2>
+        <div id="mentor-list"></div>
+    </main>
+    
+    <script>
+        async function fetchMentors() {
+            const response = await fetch('/get-mentors?keywords=IT');
+            const mentors = await response.json();
+            const mentorList = document.getElementById('mentor-list');
+
+            mentors.forEach(mentor => {
+                const mentorCard = document.createElement('div');
+                mentorCard.className = 'mentor-card';
+
+                const mentorInfo = `
+                    <div class="mentor-info">
+                        <h3>${mentor[0]} ${mentor[1]}</h3>
+                        <p>Unit: ${mentor[2]}</p>
+                        <p>Designation: ${mentor[3]}</p>
+                        <p>Past Experience: ${mentor[4]}</p>
+                    </div>
+                `;
+
+                mentorCard.innerHTML = mentorInfo;
+                mentorList.appendChild(mentorCard);
+            });
+        }
+
+        fetchMentors();
+    </script>
+</body>
+</html>
