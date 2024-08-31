@@ -12,74 +12,77 @@
             margin: 0;
             padding: 0;
         }
-        
-        /* Expert Section */
-        .experts {
-            padding: 40px;
-            background-color: #fff;
-            text-align: center;
-        }
-        .experts h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .expert-cards {
+
+        /* FAQ Section */
+        .faq-section {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .card {
-            width: 22%;
+            padding: 50px;
             background-color: #FDF6E4;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-box {
+            flex: 1;
+            padding: 40px;
+            background-color: #FF6F61; /* Color-coded FAQ box */
+            color: #fff;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-right: 30px;
         }
-        .card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
+
+        .faq-box h2 {
+            font-size: 48px;
+            margin: 0;
         }
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+
+        .qna {
+            flex: 2;
         }
-        .stars {
-            color: #f1c40f;
+
+        .question {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .question p {
             font-size: 18px;
+            margin: 0;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
     <!-- Previous sections go here... -->
 
-    <!-- Experts Section -->
-    <div class="experts">
-        <h2>Our Top Experts</h2>
-        <div class="expert-cards">
-            <div class="card">
-                <img src="https://via.placeholder.com/100" alt="Expert 1">
-                <h3>Expert Name 1</h3>
-                <div class="stars">★★★★★</div>
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <div class="faq-box">
+            <h2>FAQ</h2>
+        </div>
+        <div class="qna">
+            <div class="question">
+                <h3>How does Saarthi connect me with mentors?</h3>
+                <p>Our platform uses machine learning algorithms to analyze your profile and preferences, matching you with the best possible mentors.</p>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/100" alt="Expert 2">
-                <h3>Expert Name 2</h3>
-                <div class="stars">★★★★☆</div>
+            <div class="question">
+                <h3>Is the mentorship 1:1?</h3>
+                <p>Yes, Saarthi offers personalized 1:1 mentorship sessions tailored to your specific needs and goals.</p>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/100" alt="Expert 3">
-                <h3>Expert Name 3</h3>
-                <div class="stars">★★★★★</div>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/100" alt="Expert 4">
-                <h3>Expert Name 4</h3>
-                <div class="stars">★★★★☆</div>
+            <div class="question">
+                <h3>How can I trust the quality of mentors?</h3>
+                <p>All our mentors are thoroughly vetted and rated by previous mentees, ensuring you receive guidance from experienced and trustworthy professionals.</p>
             </div>
         </div>
     </div>
